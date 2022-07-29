@@ -27,3 +27,7 @@ target_link_libraries(QCodeEditorExample
     Qt5::Gui
     QCodeEditor
 )
+
+install(TARGETS QCodeEditorExample
+    RUNTIME DESTINATION "bin"
+)

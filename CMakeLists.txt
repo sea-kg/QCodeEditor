@@ -3,6 +3,7 @@ project(QCodeEditor)
 
 set(CMAKE_CXX_STANDARD 11)
 
+
 option(BUILD_EXAMPLE "Example building required" Off)
 
 if (${BUILD_EXAMPLE})
@@ -108,3 +109,11 @@ target_link_libraries(QCodeEditor
     Qt5::Widgets
     Qt5::Gui
 )
+
+install(TARGETS QCodeEditor
+    ARCHIVE DESTINATION "lib"
+)
+
+install(FILES ${CMAKE_SOURCE_DIR}/example/resources/styles/drakula.xml DESTINATION "share/QCodeEditor/styles")
+install(FILES ${CMAKE_SOURCE_DIR}/resources/default_style.xml DESTINATION "share/QCodeEditor/styles")
+install(DIRECTORY ${CMAKE_SOURCE_DIR}/include DESTINATION "include")
